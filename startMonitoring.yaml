@@ -1,0 +1,100 @@
+---
+slice:
+   id: slice1
+   name: TouristicCDN_sliced
+   
+   vim:
+      - slice-vim:
+           name: slice_part_1
+           type: kubernetes
+
+           dc-slice-controller:
+              dc-slice-provider: definded
+              ip: 3xx.xxx.xxx.1
+              port: 6000
+
+           monitoring-parameters:
+              tool: prometheus
+              measurements-db-ip: 192.168.2.81
+              measurements-db-port: 9090
+              granularity-secs: 10
+              metrics:
+                 - metric:
+                      name: CPU_UTILIZATION_PHYSICAL
+                 - metric:
+                      name: MEMORY_UTILIZATION_PHYSICAL
+                 - metric:
+                      name: TOTAL_BYTES_READS_PHYSICAL
+                 - metric:
+                      name: TOTAL_BYTES_WRITES_PHYSICAL
+                 - metric:
+                      name: TOTAL_BYTES_RX_PHYSICAL
+                 - metric:
+                      name: TOTAL_BYTES_TX_PHYSICAL
+                 - metric:
+                      name: TOTAL_PACKETS_RX_PHYSICAL
+                 - metric:
+                      name: TOTAL_PACKETS_TX_PHYSICAL
+                 - metric:
+                      name: CPU_UTILIZATION_CONTAINER
+                 - metric:
+                      name: MEMORY_UTILIZATION_CONTAINER
+                 - metric:
+                      name: TOTAL_BYTES_READS_CONTAINER
+                 - metric:
+                      name: TOTAL_BYTES_WRITES_CONTAINER
+                 - metric:
+                      name: TOTAL_BYTES_RX_CONTAINER
+                 - metric:
+                      name: TOTAL_BYTES_TX_CONTAINER
+                 - metric:
+                      name: TOTAL_PACKETS_RX_CONTAINER
+                 - metric:
+                      name: TOTAL_PACKETS_TX_CONTAINER
+      - slice-vim:
+           name: slice_part_2
+           type: kubernetes
+
+           dc-slice-controller:
+              dc-slice-provider: IBM
+              ip: 2xx.xxx.xxx.1
+              port: 5000
+
+           monitoring-parameters:
+               tool: prometheus
+               measurements-db-ip: 192.168.2.80
+               measurements-db-port: 9092
+               granularity-secs: 10
+               metrics:
+                  - metric:
+                       name: CPU_UTILIZATION_PHYSICAL
+                  - metric:
+                       name: MEMORY_UTILIZATION_PHYSICAL
+                  - metric:
+                       name: TOTAL_BYTES_READS_PHYSICAL
+                  - metric:
+                       name: TOTAL_BYTES_WRITES_PHYSICAL
+                  - metric:
+                       name: TOTAL_BYTES_RX_PHYSICAL
+                  - metric:
+                       name: TOTAL_BYTES_TX_PHYSICAL
+                  - metric:
+                       name: TOTAL_PACKETS_RX_PHYSICAL
+                  - metric:
+                       name: TOTAL_PACKETS_TX_PHYSICAL
+                  - metric:
+                       name: CPU_UTILIZATION_CONTAINER
+                  - metric:
+                       name: MEMORY_UTILIZATION_CONTAINER
+                  - metric:
+                       name: TOTAL_BYTES_READS_CONTAINER
+                  - metric:
+                       name: TOTAL_BYTES_WRITES_CONTAINER
+                  - metric:
+                       name: TOTAL_BYTES_RX_CONTAINER
+                  - metric:
+                       name: TOTAL_BYTES_TX_CONTAINER
+                  - metric:
+                       name: TOTAL_PACKETS_RX_CONTAINER
+                  - metric:
+                       name: TOTAL_PACKETS_TX_CONTAINER
